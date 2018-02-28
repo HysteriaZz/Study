@@ -1,4 +1,4 @@
-package generic.coffee;
+package generic.tointerface.coffee;
 
 /**
  * Created by KaiLin.Guo on 2017-12-06.

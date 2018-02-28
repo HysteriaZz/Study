@@ -1,4 +1,4 @@
-package generic.coffee;
+package generic.tointerface.coffee;
 
 import java.util.Iterator;
 import java.util.Random;
