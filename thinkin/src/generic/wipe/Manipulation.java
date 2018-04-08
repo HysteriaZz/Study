@@ -1,6 +1,7 @@
 package generic.wipe;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -20,6 +21,16 @@ public class Manipulation {
         System.out.println(new ArrayList<Integer>().getClass());
         System.out.println(ll.getClass());
         System.out.println(kk.getClass());
+
+        char[][] arr2 =  {{2,3},{3,99}};
+
+        for(char[] a : arr2) {
+            for(char b : a) {
+                System.out.println("bbb" + String.valueOf(b));
+            }
+
+        }
+        System.out.println(Arrays.toString(args));
 
 //        class java.lang.String
 //        class java.util.ArrayList
