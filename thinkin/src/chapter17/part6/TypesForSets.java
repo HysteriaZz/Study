@@ -4,7 +4,7 @@ import java.util.*;
 
 /**
  * Created by KaiLin.Guo on 2018-04-10.
- * Set、HashSet、TreeSet、LinkedHashSet
+ * Set、SortedSet、HashSet、TreeSet、LinkedHashSet
  * 几种Set判断重复的方法
  * Set、SortedSet：根据equals方法
  * TreeSet：根据compareTo方法和equals方法
