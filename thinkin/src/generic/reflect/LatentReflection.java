@@ -43,6 +43,7 @@ class CommunicationReflectively {
                 Method speck = spkr.getMethod("speak");
                 speck.invoke(speaker);
             } catch (NoSuchMethodException e) {
+                e.printStackTrace();
                 System.out.println(speaker + " cannot speak");
             }
 
@@ -50,6 +51,7 @@ class CommunicationReflectively {
                 Method sit = spkr.getMethod("sit");
                 sit.invoke(speaker);
             } catch (NoSuchMethodException e) {
+                e.printStackTrace();
                 System.out.println(speaker + " cannot sit");
             }
         } catch (Exception e) {
