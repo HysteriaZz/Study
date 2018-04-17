@@ -7,12 +7,12 @@ import java.util.*;
  * Set、SortedSet、HashSet、TreeSet、LinkedHashSet
  * 几种Set判断重复的方法
  * Set、SortedSet：根据equals方法
- * TreeSet：根据compareTo方法和equals方法
+ * TreeSet：根据compareTo方法且必须实现
  * HashSet、LinkedHashSet：根据hashCode方法和equals方法
  * 几种Set的排序
  * Set：无序
  * SortedSet：根据对象的比较函数排序
- * TreeSet：红黑树遍历
+ * TreeSet：存储顺序按树，遍历按树
  * HashSet：hashcode方法
  * LinkedHashSet：按插入顺序
  * PS：容器内元素hashcode获取：若元素重写了hashcode方法则使用已重写的，基本类型String都已重写（按每个char字符求得）
@@ -101,7 +101,7 @@ class HashType extends SetType {
     @Override
     public int hashCode() {
         return i;
-        // return j++;
+//         return j++;
     }
 }
 
@@ -113,7 +113,7 @@ class TreeType extends SetType implements Comparable<TreeType> {
     @Override
     public int compareTo(TreeType o) {
         return o.i < i ? -1 : (o.i == i ? 0 : 1);
-        // return 1;
+//        return 1;
     }
 
 }
