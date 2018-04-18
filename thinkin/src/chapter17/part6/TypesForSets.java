@@ -12,7 +12,7 @@ import java.util.*;
  * 几种Set的排序
  * Set：无序
  * SortedSet：根据对象的比较函数排序
- * TreeSet：存储顺序按树，遍历按树
+ * TreeSet：存储和遍历顺序按红黑树，底层是TreeMap实现的
  * HashSet：hashcode方法
  * LinkedHashSet：按插入顺序
  * PS：容器内元素hashcode获取：若元素重写了hashcode方法则使用已重写的，基本类型String都已重写（按每个char字符求得）
@@ -83,6 +83,7 @@ class SetType {
     @Override
     public boolean equals(Object obj) {
         return obj instanceof SetType && (i == ((SetType)obj).i);
+//        return true;
     }
 
     @Override

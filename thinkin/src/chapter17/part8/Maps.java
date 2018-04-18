@@ -7,6 +7,13 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Created by KaiLin.Guo on 2018-04-17.
+ * HashMap、、TreeMap、WeakHashMap、ConcurrentHashMap、IdentityHashMap
+ * HashMap*：基于散列表的实现取代了HashTable，插入和查询的开销是固定的，可通过构造器设置容器和负载因子以调节容器性能
+ * LinkedHashMap：类似于HashMap，按其插入顺序取的键值对，迭代访问时反而更快，因为它使用链表维护内部次序
+ * TreeMap：基于红黑树的实现，【不允许键为null】，查看键或键值对时，会被排序（次序由Comparable或Comparator决定），唯一带有subMap方法的Map可以返回一个子树
+ * WeakHashMap：弱键映射，允许释放所指向的对象，如果没有引用指向某个键，该键会被回收
+ * ConcurrentHashMap：一种线程安全的Map，它不涉及同步加锁
+ * IdentityHashMap：使用==代替equals对键进行散列的映射
  */
 public class Maps {
     public static void printKeys(Map<Integer, String> map) {
