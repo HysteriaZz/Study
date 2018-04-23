@@ -1,4 +1,4 @@
-package demo;
+package other;
 import java.io.FileReader;
 
 
@@ -6,7 +6,7 @@ public class FileIO {
 	
 		public static void main(String[] args) {
 			try {
-				FileReader fr = new FileReader("out/production/ThinkIn/demo/FileWriter.txt");
+				FileReader fr = new FileReader("out/production/ThinkIn/other/FileWriter.txt");
 				char[] array = new char[2];
 				int len = fr.read(array);
 				String str = new String(array);

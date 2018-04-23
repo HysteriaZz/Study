@@ -1,3 +1,5 @@
+package other;
+
 import java.io.Serializable;
 import java.util.Random;
 

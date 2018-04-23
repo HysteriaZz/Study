@@ -1,3 +1,5 @@
+package other;
+
 import java.io.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -36,18 +38,18 @@ public class MyThinkInApp {
         Userful[] x = {new Userful(), new MoreUserful()}; // 向上转型
         x[0].f();
         x[1].f(); //only f()
-        //((MoreUserful)x[0]).g(); // 向下转型
+        //((other.MoreUserful)x[0]).g(); // 向下转型
         ((MoreUserful)x[1]).g();
 
-        //Userful y = new Userful();
-        //((MoreUserful)y).g(); // Exception Userful cannot be cast to MoreUserful
+        //other.Userful y = new other.Userful();
+        //((other.MoreUserful)y).g(); // Exception other.Userful cannot be cast to other.MoreUserful
 
         Sequence sequence = new Sequence(10);
         for (int i = 0; i < 10; i++){
             sequence.add(Integer.toString(i));
         }
         Selector selector = sequence.selector();
-        //Selector selector1 = sequence.new SequenceSelector();
+        //other.Selector selector1 = sequence.new SequenceSelector();
 
         while (!selector.end()) {
             System.out.print(selector.current() + " ");
@@ -142,9 +144,9 @@ public class MyThinkInApp {
         try {
             double pp = 1/0;
         } catch (Exception e) {
-            e.printStackTrace(System.out); // at MyThinkInApp.main(MyThinkInApp.java:127) 白
+            e.printStackTrace(System.out); // at other.MyThinkInApp.main(other.MyThinkInApp.java:127) 白
             System.out.printf("\n");
-            e.printStackTrace(); // java.lang.ArithmeticException: / by zero at MyThinkInApp.main(MyThinkInApp.java:127) 打印到标准错误流 红
+            e.printStackTrace(); // java.lang.ArithmeticException: / by zero at other.MyThinkInApp.main(other.MyThinkInApp.java:127) 打印到标准错误流 红
         }
 
         List<Integer> tempList = new ArrayList<Integer>();
@@ -159,7 +161,7 @@ public class MyThinkInApp {
         }
 
         if (true) {
-            //throw new LoggingRuntime(); // 运行时异常直接对外抛，但是一般不，若未处理后面语句将不被执行
+            //throw new other.LoggingRuntime(); // 运行时异常直接对外抛，但是一般不，若未处理后面语句将不被执行
         }
 
         // break 跳出里层循环，tag + break 跳出标记tag层循环
@@ -211,13 +213,13 @@ public class MyThinkInApp {
 
         }
         try {
-            Class c1 = Class.forName("Userful"); // or use classname.class
+            Class c1 = Class.forName("other.Userful"); // or use classname.class
             System.out.println(c1 + c1.getClasses().toString());
             Object o1 = c1.newInstance();
             System.out.println(o1 + o1.getClass().toString());
 
         } catch (Exception e) {
-            System.out.println("Can't find IterableClass or ...");
+            System.out.println("Can't find other.IterableClass or ...");
             System.exit(1); //<>0-非正常退出
         }
         FilledList<CountInteger> fl = new FilledList<CountInteger>(CountInteger.class);
@@ -301,7 +303,7 @@ class PrintingContainers {
  * 普通异常类，对外抛异常需要throws
  */
 class LoggingException extends BaseException {
-    private static Logger logger = Logger.getLogger("LoggingException");
+    private static Logger logger = Logger.getLogger("other.LoggingException");
     public LoggingException() {
         StringWriter trace = new StringWriter();
         printStackTrace(new PrintWriter(trace));
@@ -320,7 +322,7 @@ class BaseException extends Exception {
  * 运行时异常，对外抛异常不需要throws，一般catch就行或直接对外抛
  */
 class LoggingRuntime extends BaseRuntimeException {
-    private static Logger logger = Logger.getLogger("LoggingException");
+    private static Logger logger = Logger.getLogger("other.LoggingException");
     public LoggingRuntime() {
         StringWriter trace = new StringWriter();
         printStackTrace(new PrintWriter(trace));
