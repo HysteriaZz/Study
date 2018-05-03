@@ -2,6 +2,7 @@ package chapter21.part2;
 
 /**
  * Created by KaiLin.Guo on 2018-05-02.
+ * Thread.yield()让步
  */
 public class LiftOff implements Runnable {
     protected int countDown = 10;
